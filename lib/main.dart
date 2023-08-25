@@ -28,7 +28,7 @@ class MainApp extends StatelessWidget {
               IconList(),
               IconList(),
               Fecha(),
-              IconList(),
+              IconList2(),
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
@@ -88,7 +88,6 @@ class Torneo extends StatelessWidget {
   }
 }
 
-
 class Fecha extends StatelessWidget {
   const Fecha({super.key});
   @override
@@ -113,7 +112,6 @@ class Fecha extends StatelessWidget {
     );
   }
 }
-
 
 class IconList extends StatelessWidget {
   const IconList({super.key});
@@ -213,8 +211,103 @@ class IconList extends StatelessWidget {
   }
 }
 
+class IconList2 extends StatelessWidget {
+  const IconList2({super.key});
 
-
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTextStyle.merge(
+      child: Container(
+        width: 299,
+        padding: const EdgeInsets.all(20),
+        child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Cancha #1 13:00 p.m.",
+              style: TextStyle(
+                fontSize: 16,
+                color: Color.fromARGB(255, 255, 255, 255),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Image(
+                              image: NetworkImage(
+                                "https://firebasestorage.googleapis.com/v0/b/prueba-4a712.appspot.com/o/bitmap-enB.png?alt=media&token=1a7d34b7-1525-4c7d-bf46-5ca45a118b84",
+                              ),
+                              width: 30,
+                              height: 30,
+                            ),
+                            Text(
+                              "Equipo 1",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Cancelado",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Color.fromARGB(255, 211, 11, 11),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Equipo 2",
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            ),
+                            Image(
+                              image: NetworkImage(
+                                "https://firebasestorage.googleapis.com/v0/b/prueba-4a712.appspot.com/o/bitmap-enB.png?alt=media&token=1a7d34b7-1525-4c7d-bf46-5ca45a118b84",
+                              ),
+                              width: 30,
+                              height: 30,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
